@@ -10,12 +10,12 @@ export default class Geometry {
         this.planeGeomety = new THREE.PlaneGeometry(1, 1);
 
         this.cubeMaterial = new THREE.MeshStandardMaterial({
-            color: 0xffffff,
-            side: THREE.DoubleSide,
+            color: 0xffffff
         });
         this.planeMaterial = new THREE.ShaderMaterial({
             vertexShader: testVertexShader,
-            fragmentShader: testFragmentShader
+            fragmentShader: testFragmentShader,
+            side: THREE.DoubleSide,
         });
 
         this.cubeMaterial.metalness = 0.2;
