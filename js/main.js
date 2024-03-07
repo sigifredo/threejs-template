@@ -1,5 +1,4 @@
 
-import * as THREE from 'three';
 import Environment from './Environment';
 import Geometry from './Geometry';
 import Lights from './Lights';
