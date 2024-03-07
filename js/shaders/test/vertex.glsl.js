@@ -1,13 +1,16 @@
 export default /* glsl */`
 
-uniform mat4 projectionMatrix;
-uniform mat4 viewMatrix;
-uniform mat4 modelMatrix;
+uniform float u_time;
 
-attribute vec3 position;
+varying vec3 v_position;
+varying vec3 v_normal;
+varying vec2 v_uv;
 
-void main()
-{
-    gl_Position = projectionMatrix * viewMatrix * modelMatrix * vec4(position, 1.0);
+void main() {
+	v_position = position;
+	v_normal = normal;
+	v_uv = uv;
+
+	gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
 }
 `;
